@@ -12,13 +12,18 @@
 
   "Minhas 3 séries favoritas são: SÉRIE_01, SÉRIE_02 e SÉRIE_03."
 */
-const my3FavoriteTVShows = {
-  SÉRIE_01: 'Interestelar',
-  SÉRIE_02: 'Constantine',
-  SÉRIE_03: 'Batman - cavalheiro das trevas'
-}
-const sentence = `Minhas 3 séries favoritas são: ${my3FavoriteTVShows.SÉRIE_01},  ${my3FavoriteTVShows.SÉRIE_02} e ${my3FavoriteTVShows.SÉRIE_03}.`
-console.log(sentence)
+// const my3FavoriteTVShows = {
+//   SÉRIE_01: 'Interestelar',
+//   SÉRIE_02: 'Constantine',
+//   SÉRIE_03: 'Batman - cavalheiro das trevas'
+// }
+// const sentence = `Minhas 3 séries favoritas são: ${my3FavoriteTVShows.SÉRIE_01}, ${my3FavoriteTVShows.SÉRIE_02} e ${my3FavoriteTVShows.SÉRIE_03}.`
+
+const my3FavoriteTVShows = ['Interestelar', 'Constantine', 'Batman - cavalheiro das trevas'
+]
+const sentence = `Minhas 3 séries favoritas são: ${my3FavoriteTVShows.join(", ")}`
+  .replace(', B', ' e B')
+// console.log(sentence)
 
 /*
   02 - Comente o console.log() acima e:
@@ -27,19 +32,21 @@ console.log(sentence)
     possui 3 itens.
 */
 
-
+// console.log(my3FavoriteTVShows.length === 3)
 
 /*
   03 - Comente o console.log() acima e:
 
   - Após a constante abaixo, armazene em uma constante "isRandomTVShowIncluded"  
-    um boolean que indica se a série que a "randomTVShow" armazena é uma das  
-    suas 3 séries favoritas;
+    um boolean que indica se a série que a "randomTVShow" armazena é uma das suas 3 séries favoritas;
   - Utilize o método adequado para fazer essa verificação;
   - Exiba no console o boolean que a "isRandomTVShowIncluded" recebeu.
 */
 
 const randomTVShow = 'Watchmen'
+const isRandomTVShowIncluded = my3FavoriteTVShows.includes(randomTVShow)
+
+// console.log(isRandomTVShowIncluded)
 
 /*
   04 - Comente o console.log() acima e:
@@ -52,7 +59,8 @@ const randomTVShow = 'Watchmen'
   "O tipo de dado que a const "isRandomTVShowIncluded" armazena é: TIPO_DE_DADO."
 */
 
-
+const typeSentence = `O tipo de dado que a const "isRandomTVShowIncluded" armazena é: ${typeof isRandomTVShowIncluded}.`
+// console.log(typeSentence)
 
 /*
   05 - Comente o console.log() acima e:
@@ -67,8 +75,8 @@ const randomTVShow = 'Watchmen'
   "A string que a "typeSentence" armazena tem mais de NÚMERO_DE_CARACTERES  
   caracteres? BOOLEAN."
 */
-
-
+const trintaeNove = 39
+// console.log(`A string que a "typeSentence" armazena tem mais de ${trintaeNove} caracteres? ${String(typeSentence.length > trintaeNove).replace('t', 'T')}.`)
 
 /*
   06 - Comente o console.log() acima e:
@@ -81,7 +89,7 @@ const randomTVShow = 'Watchmen'
 */
 
 const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
-
+// console.log(`Todos os ${falsyValues.length} itens do array "falsyValues" são falsy. Inclusive o ${falsyValues[2]}.`)
 /*
   07 - Comente o console.log() acima e:
 
@@ -91,7 +99,10 @@ const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
   - Você sabe por que essa conversão resultou em true?
 */
 
-
+const crazyOperation = null + 1
+// const crazyConversion = !!crazyOperation
+const crazyConversion = Boolean(crazyOperation)
+// console.log(crazyConversion)
 
 /*
   08 - Comente o console.log() acima e:
@@ -106,7 +117,9 @@ const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
   é: BOOLEAN."
 */
 
-
+const ages = [31, 82, 61, 11]
+const agesSum = ages[0] + ages[2]
+// console.log(`A soma entre o 1º e o 3º item de "ages" é menor ou igual a 92. Essa afirmação é: ${agesSum <= 92}.`)
 
 /*
   09 - Comente o console.log() acima e:
@@ -117,7 +130,8 @@ const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
   - Exiba a "isNotAString" no console.
 */
 
-
+const isNotAString = typeof randomTVShow !== 'string'
+// console.log(isNotAString)
 
 /*
   10 - Comente o console.log() acima e:
@@ -128,3 +142,6 @@ const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
 */
 
 const evenNumbers = [0, 2, 4, 6, 8, 10]
+
+// console.log(evenNumbers.includes(8))
+console.log(evenNumbers.indexOf(8) !== -1)

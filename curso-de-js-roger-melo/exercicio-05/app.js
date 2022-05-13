@@ -21,7 +21,11 @@
     5
 */
 
-
+// let number = 0
+// while (number <= 5) {
+//   console.log(number);
+//   number++;
+//}
 
 /*
   02 - Comente a declaração da let e o loop acima e:
@@ -29,7 +33,9 @@
   - Utilizando um for loop, faça o mesmo que foi pedido no exercício 01.
 */
 
-
+// for (number = 0; number <= 5; number++) {
+//   console.log(number)
+// }
 
 /*
   03 - Comente o loop acima e:
@@ -42,7 +48,9 @@
   "Esta é a Xª vez que esta frase é exibida no console."
 */
 
-
+// for (i = 1; i <= 10; i++) {
+//   console.log(`Esta é a ${i}ª vez que esta frase é exibida no console`)
+// }
 
 /*
   04 - Comente o loop acima e:
@@ -55,6 +63,11 @@
 */
 
 const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
+let upperCaseCities = []
+for (i = 0; i <= cities.length - 1; i++) {
+  upperCaseCities.push(cities[i].toString().toUpperCase())
+}
+// console.log(upperCaseCities)
 
 /*
   05 - Comente o console.log acima e:
@@ -66,6 +79,11 @@ const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
 */
 
 const names = ['João Grilo', 'Chicó', 'Rosinha']
+let HTMLTemplate = ''
+for (i = 0; i <= names.length - 1; i++) {
+  HTMLTemplate += `<li>${names[i]}</li>`
+}
+// console.log(HTMLTemplate)
 
 /*
   06 - Comente o console.log acima e:
@@ -77,6 +95,12 @@ const names = ['João Grilo', 'Chicó', 'Rosinha']
 */
 
 const numbers = ['91', '5', '30', '97', '83', '31']
+let number = 0
+
+for (i = 0; i <= numbers.length - 1; i++) {
+  number += Number(numbers[i])
+}
+// console.log(number === 337)
 
 /*
   07 - Comente o console.log acima.
@@ -102,3 +126,16 @@ const arrays = [
   [8, 32, 16],
   [2, 8, 4]
 ]
+
+let arrayOne = 0
+let arrayTwo = 0
+let arrayTree = 0
+let soma = 0;
+
+for (i = 0; i <= arrays.length - 1; i++) {
+  console.log(i, arrays[i])
+  // for (j = 0; j <= arrays[j] j++) {
+  //   arrayOne += arrays[i]
+  // }
+  // console.log(arrayOne)
+}
