@@ -5,7 +5,7 @@
   - O resultado exibido no console deve ser: false true.
 */
 
-console.log(true, false)
+// console.log(!true, !false)
 
 /*
   02
@@ -17,6 +17,12 @@ console.log(true, false)
 */
 
 const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
+
+if (!animals.includes('leão')) {
+  console.log(`Leão não existe no array animals;`)
+}
+else console.log(`Existe um leão no array animals`)
+
 
 /*
   03
@@ -30,10 +36,21 @@ const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
 */
 
 const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
+let someRandomNumbers = 0
+console.log(someRandomNumbers < 400)
+for (i = 0; i <= randomNumbers.length - 1; i++) {
+  if (someRandomNumbers < 400) {
+    someRandomNumbers += randomNumbers[i]
+  }
+  else if (someRandomNumbers >= 400) {
+    console.log(`A soma ultrapassou 400. Até aqui, o valor atual é ${someRandomNumbers}"`)
+    break
+  }
+}
 
 /*
   04
-
+ 
   - Concatene as strings do array abaixo, formando uma frase;
   - Se durante a concatenação a palavra "certeza" existir, ela não deve ser  
     concatenada;
@@ -42,13 +59,24 @@ const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
 
 const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sabedoria.']
 
+let frase = []
+for (let i = 0; i < sentence.length; i++) {
+  if (sentence[i] === 'certeza') {
+    continue
+  }
+  frase += sentence[i] + ' ';
+}
+// console.log(frase)
+
+// console.log(sentence.join(' ').replace('certeza ', ''))
+
 /*
   05
-
+ 
   - Itere sobre o array "randomValues" apenas até a 4ª string dele;
   - Exiba a string abaixo no console, mantendo a formatação de lista e inserindo  
     as informações corretas:
-
+ 
   "
     3 informações sobre o array randomValues:
       - As primeiras 4 strings são XX, XX, XX e XX;
@@ -59,9 +87,29 @@ const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sab
 
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
 
+let countString = 0
+let countBoolean = 0
+let arrayCountString = []
+
+for (let i = 0; i <= randomValues.length - 1; i++) {
+  if (typeof randomValues[i] === 'string') {
+    countString++
+
+    if (countString <= 4) {
+      arrayCountString.push(randomValues[i])
+    }
+  }
+  else if (typeof randomValues[i] === 'boolean') {
+    countBoolean++
+  }
+}
+// console.log(`As primeiras 4 strings são: ${arrayCountString.join(', ').replace(', G', ' e G')}`)
+// console.log(`Até que as primeiras 4 strings fossem iteradas, ${countBoolean} booleans foram iterados;`)
+// console.log(`O array foi iterado por ${randomValues.length} vezes.`)
+
 /*
   06
-
+ 
   - Descomente a constante abaixo atribua a ela algum tipo de bebida. Exemplo:  
     água, refrigerante ou suco;
   - Utilize um switch statement com cases para essas 3 possibilidades de bebida;
@@ -79,11 +127,30 @@ const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS',
     da bebida além da que você escolheu.
 */
 
-// const drinkType
+const drinkType = 'água'
+
+switch (drinkType) {
+  case 'água':
+    mensagem = 'Substância química cujas moléculas são formadas por dois átomos de hidrogênio e um de oxigênio'
+    break;
+
+  case 'refrigerante':
+    mensagem = 'Bebida não alcoólica e não fermentada, fabricada industrialmente, à base de água mineral e açúcar'
+    break;
+
+  case 'suco':
+    mensagem = 'Bebida produzida do líquido extraído de frutos'
+    break;
+
+
+  default: mensagem = 'Bebida desconhecida'
+    break;
+}
+// console.log(mensagem)
 
 /*
   07
-
+ 
   - Reescreva o código comentado abaixo, utilizando um switch statement;
   - Depois de escrever o switch, modifique o valor da declaração da const "a"  
     para testar o switch que você escreveu.
@@ -98,3 +165,17 @@ const a = 2
 // } else {
 //   console.log('O valor de "a" é qualquer número, exceto 0 e 1')
 // }
+
+switch (a) {
+  case 0:
+    console.log(`O valor de "a" é ${a}`)
+    break;
+
+  case 1:
+    console.log(`O valor de "a" é ${a}`)
+    break;
+
+  default:
+    console.log('O valor de "a" é qualquer número, exceto 0 e 1')
+    break;
+}

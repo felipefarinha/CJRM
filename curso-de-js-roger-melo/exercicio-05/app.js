@@ -127,15 +127,12 @@ const arrays = [
   [2, 8, 4]
 ]
 
-let arrayOne = 0
-let arrayTwo = 0
-let arrayTree = 0
 let soma = 0;
 
 for (i = 0; i <= arrays.length - 1; i++) {
-  console.log(i, arrays[i])
-  // for (j = 0; j <= arrays[j] j++) {
-  //   arrayOne += arrays[i]
-  // }
-  // console.log(arrayOne)
+  // console.log(i, arrays[i])
+  for (j = 0; j < arrays[i].length; j++) {
+    soma += arrays[i][j]
+  }
 }
+console.log(soma)
