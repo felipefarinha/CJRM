@@ -13,9 +13,12 @@
     valor no console.
 */
 
-function convertToString (value) {
-  return String(value)
-}
+// function convertToString(value) {
+//   return String(value)
+// }
+
+const convertToString = (value) => String(value)
+// console.log(convertToString('felipe'))
 
 /*
   02
@@ -23,7 +26,9 @@ function convertToString (value) {
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
+const countCaracters = (string = '') => string.length
 
+// console.log(countCaracters('Felipe Farinha'))
 /*
   03
 
@@ -33,13 +38,18 @@ function convertToString (value) {
 
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
+const caractersAndToUpperCase = (string = '') => string.toLowerCase()
 
+// console.log(caractersAndToUpperCase('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO'))
 /*
   04
 
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
+const func = (caractere = 'A', string = 'string') => { string.lastIndexOf(caractere) }
+
+// console.log(func('e', 'felipe'))
 
 /*
   05
@@ -146,7 +156,7 @@ const review = [
 
 let paragraphs = ''
 
-section.innerHTML = paragraphs
+// section.innerHTML = paragraphs
 
 /*
   14
