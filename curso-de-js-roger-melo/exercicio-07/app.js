@@ -36,8 +36,9 @@ else console.log(`Existe um leão no array animals`)
 */
 
 const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
+
 let someRandomNumbers = 0
-console.log(someRandomNumbers < 400)
+
 for (i = 0; i <= randomNumbers.length - 1; i++) {
   if (someRandomNumbers < 400) {
     someRandomNumbers += randomNumbers[i]
@@ -90,6 +91,7 @@ const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS',
 let countString = 0
 let countBoolean = 0
 let arrayCountString = []
+let totalInteracoes = 0
 
 for (let i = 0; i <= randomValues.length - 1; i++) {
   if (typeof randomValues[i] === 'string') {
@@ -102,15 +104,18 @@ for (let i = 0; i <= randomValues.length - 1; i++) {
   else if (typeof randomValues[i] === 'boolean') {
     countBoolean++
   }
+  totalInteracoes++
 }
-// console.log(`As primeiras 4 strings são: ${arrayCountString.join(', ').replace(', G', ' e G')}`)
-// console.log(`Até que as primeiras 4 strings fossem iteradas, ${countBoolean} booleans foram iterados;`)
-// console.log(`O array foi iterado por ${randomValues.length} vezes.`)
+const replace = arrayCountString[arrayCountString.length - 1]
+
+console.log(`As primeiras 4 strings são: ${arrayCountString.join(', ').replace(`, ${replace}`, ` e ${replace}`)} `)
+console.log(`Até que as primeiras 4 strings fossem iteradas, ${countBoolean} booleans foram iterados;`)
+console.log(`O array foi iterado por ${totalInteracoes} vezes.`)
 
 /*
   06
  
-  - Descomente a constante abaixo atribua a ela algum tipo de bebida. Exemplo:  
+  - Descomente a constante abaixo e atribua a ela algum tipo de bebida. Exemplo:  
     água, refrigerante ou suco;
   - Utilize um switch statement com cases para essas 3 possibilidades de bebida;
   - Se o tipo da bebida é água, atribua à uma variável a mensagem "Substância 

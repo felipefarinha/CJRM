@@ -6,6 +6,8 @@
   - Previna que esses parâmetros recebam undefined;
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
+const multi = (param1 = 0, param2 = 0) => param1 * param2
+// console.log(multi(2, 5))
 
 /*
   02
@@ -14,7 +16,8 @@
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
-
+const divid = (param1 = 0, param2 = 0) => param1 / param2
+// console.log(divid(2, 5))
 /*
   03
 
@@ -27,7 +30,14 @@
 
   "Esta é a Xª vez que essa string é exibida."
 */
-
+const print = (param) => {
+  if (!param) { console.log('Passe uma string') }
+  else
+    for (let i = 1; i <= 7; i++) {
+      console.log(`${param} < < Esta é a ${i}ª vez que essa string é exibida`)
+    }
+}
+// print('passando estring')
 /*
   04
 
@@ -38,9 +48,21 @@
   - Exiba o novo array no console, sem inserir um console.log() dentro da  
     função.
 */
-
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
 
+
+function upperCase(arr = []) {
+
+  let arrFinal = []
+
+  for (let i = 0; i < arr.length; i++) {
+    arrFinal.push(arr[i].toUpperCase())
+  }
+
+  return arrFinal
+}
+
+// console.log(upperCase(millennialWords))
 /*
   05
 
@@ -54,6 +76,23 @@ const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influenc
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
 
+function numbersStatus(arr = []) {
+  let countPositive = 0
+  let countNegative = 0
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] >= 0) { countPositive++ }
+    else countNegative++
+  }
+
+  console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, sendo ${countPositive} positivos e ${countNegative} negativos. `)
+
+  retorno = { countPositive, countNegative }
+
+  return retorno
+}
+// numbersStatus(randomNumbers)
+
 /*
   06
 
@@ -64,8 +103,21 @@ const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
     função.
 */
 
-// getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
 
+let arrNumberNegative = []
+
+const getOddNumbers = function (arr = []) {
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 == 1) {
+      arrNumberNegative.push(arr[i])
+    }
+  }
+
+  return arrNumberNegative
+}
+
+// console.log(getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42]))
 /*
   07
 
@@ -102,3 +154,9 @@ const functions = [
   function () { return 'Índias' },
   function () { return 'Ocidentais.' }
 ]
+let Text = ''
+for (let i = 0; i < functions.length; i++) {
+  Text += `${functions[i]()} `
+}
+
+console.log(Text)
