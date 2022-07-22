@@ -4,6 +4,7 @@
   - Declare uma constante que recebe o seu nome;
   - Ela deve ter um escopo global.
 */
+var name = 'Felipe'
 
 /*
   02

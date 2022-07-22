@@ -57,28 +57,41 @@ const func = (caractere = 'A', string = 'string') => { string.lastIndexOf(caract
   - Crie uma função que, ao ser invocada, retorna um boolean indicando se o item  
     passado por argumento existe no array (também passado por argumento).
 */
+const arr = ['blue', 'red', 'orange', 'yellow', 'pink']
 
+const isBoolean = (item, arr) => arr.includes(item)
+
+// console.log(isBoolean('blue', arr))
 /*
   06
 
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
-
+const concatArr = (arr1, arr2) => arr1.concat(arr2)
+// console.log(concatArr(['1'], ['2']))
 /*
   07
 
   - Crie uma função que retorna o array passado como argumento em sua invocação,  
     mas com o último item removido.
 */
+let arrWithFiveNumbers = [1, 2, 3, 4, 5]
 
+const returnArrPoplast = (arr) => {
+  remove = arr.pop()
+  return arrWithFiveNumbers
+}
+// console.log(returnArrPoplast(arrWithFiveNumbers))
 /*
   08
 
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
-
+const isNull = (param) => result = param == null ? 'É null' : 'Não é null'
+// comparação com 3 ==== restringi mais
+// console.log(isNull())
 /*
   09
 
@@ -89,6 +102,14 @@ const func = (caractere = 'A', string = 'string') => { string.lastIndexOf(caract
     argumento a função que exibe seu nome no console e veja se o nome realmente  
     foi exibido.
 */
+const firstFunc = (valor) => {
+  console.log('aqui faz alguma coisa')
+}
+
+function myNameIs(name) {
+  console.log(name)
+}
+// firstFunc(myNameIs('Felipe'))
 
 /*
   10
@@ -101,6 +122,12 @@ const func = (caractere = 'A', string = 'string') => { string.lastIndexOf(caract
     resulte no triplo de 33.
 */
 
+const callcallback = (value, callback) => {
+  return callback(value)
+}
+const triple = (number) => number * 3
+
+// console.log(callcallback(33, triple))
 /*
   11
 
@@ -112,6 +139,9 @@ const func = (caractere = 'A', string = 'string') => { string.lastIndexOf(caract
 
 const numbers = [1, 2, 3]
 
+numbers.forEach((item, index, array) => {
+  // console.log(`'O ${index + 1}º item do array [${array.join(', ')}] é ${item}.'`)
+})
 /*
   12
 
@@ -123,9 +153,14 @@ const numbers = [1, 2, 3]
 const letters = ['v', 'e', 'p']
 let lettersCopy = []
 
-for (let i = 0; i < letters.length; i++) {
-  lettersCopy.push(letters[i])
-}
+// for (let i = 0; i < letters.length; i++) {
+//   lettersCopy.push(letters[i])
+// }
+
+letters.forEach((item, index, array) => {
+  lettersCopy.push(item)
+})
+// console.log(lettersCopy)
 
 /*
   13
@@ -156,7 +191,9 @@ const review = [
 
 let paragraphs = ''
 
-// section.innerHTML = paragraphs
+review.forEach((item) => { paragraphs += `<p>${item}</p>` })
+
+section.innerHTML = paragraphs
 
 /*
   14
@@ -178,3 +215,14 @@ let paragraphs = ''
     pelo restante da quantidade de pessoas que curtiram o post (além das duas  
     pessoas já mencionadas no início da mensagem).
 */
+const arrNames = ['Felipe', 'Marcos', 'Bruno', 'Daniel', 'Robert']
+
+function countLikes(arr) {
+  if (arr === undefined) { console.log('Ninguém crutiu isso') }
+  else if (arr.length == 1) { console.log(`${arr[0]} curtiu isso`) }
+  else if (arr.length == 2) { console.log(`${arr[0]} e ${arr[1]} curtiram isso`) }
+  else if (arr.length == 3) { console.log(`${arr[0]}, ${arr[1]} e ${arr[2]} curtiram isso`) }
+  else { console.log(`${arr[0]}, ${arr[1]} e mais ${arr.length - 2} pessoas curtiram isso`) }
+}
+
+countLikes(arrNames)
